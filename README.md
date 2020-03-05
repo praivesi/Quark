@@ -3,7 +3,7 @@
 Quark is a scheduler that manages one's time through whole life.
 Time is a movement of quark, so I named this scheduler "Quark" with the hope that I manage my movement well enough.
 
-This is my fist MERN(MongoDB, Express, React, Node) project,
+This is my first MERN(MongoDB, Express, React, Node) project,
 but I wish that this project will be usable to me and others because 
 I've wanted to make my own scheduler pretty far ago.
 
