@@ -86,6 +86,11 @@ class SchedulesList extends Component {
                 filterable: true
             },
             {
+                Header: 'FLOW',
+                accessor: 'flow',
+                filterable: true
+            },
+            {
                 Header: 'GOAL',
                 accessor: 'goal',
                 filterable: true

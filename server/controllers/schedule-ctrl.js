@@ -52,6 +52,7 @@ updateSchedule = async (req, res) => {
             })
         }
 
+        schedule.flow = body.flow
         schedule.goal = body.goal
         schedule.startDate = body.startDate
         schedule.endDate = body.endDate

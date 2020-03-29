@@ -41,10 +41,16 @@ class SchedulesUpdate extends Component {
 
         this.state = {
             id: this.props.match.params.id,
+            flow: '',
             goal: '',
             startDate: '',
             endDate: ''
         }
+    }
+
+    handleChangeInputFlow = async event => {
+        const flow = event.target.value
+        this.setState({ flow })
     }
 
     handleChangeInputGoal = async event => {
@@ -76,6 +82,7 @@ class SchedulesUpdate extends Component {
         const schedule = await api.getScheduleById(id)
 
         this.setState({
+            flow: schedule.data.data.flow,
             goal: schedule.data.data.goal,
             startDate: schedule.data.data.startDate,
             endDate: schedule.data.data.endDate
@@ -83,10 +90,17 @@ class SchedulesUpdate extends Component {
     }
 
     render(){
-        const { goal, startDate, endDate } = this.state
+        const { flow, goal, startDate, endDate } = this.state
         return (
             <Wrapper>
                 <Title>Update Schedule</Title>
+
+                <Label>Flow: </Label>
+                <InputText
+                    type="text"
+                    value={flow}
+                    onChange={this.handleChangeInputFlow}
+                />
                 
                 <Label>Goal: </Label>
                 <InputText

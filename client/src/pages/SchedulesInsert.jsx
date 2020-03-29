@@ -40,10 +40,16 @@ class SchedulesInsert extends Component{
         super(props)
 
         this.state = {
+            flow: '',
             goal: '',
             startDate: '',
             endDate: ''
         }
+    }
+
+    handleChangeInputFlow = async event => {
+        const flow = event.target.value
+        this.setState({flow})
     }
 
     handleChangeInputGoal = async event => {
@@ -69,6 +75,7 @@ class SchedulesInsert extends Component{
                 .then(res => {
                     window.alert('Schedule inserted successfully')
                     this.setState({
+                        flow: '',
                         goal: '',
                         startDate: '',
                         endDate: ''
@@ -77,11 +84,18 @@ class SchedulesInsert extends Component{
     }
 
     render() {
-        const {goal, startDate, endDate } = this.state
+        const { flow, goal, startDate, endDate } = this.state
 
         return (
             <Wrapper>
                 <Title> Create Schedule </Title>
+
+                <Label>Flow: </Label>
+                <InputText
+                    type="text"
+                    value={flow}
+                    onChange={this.handleChangeInputFlow}
+                />
 
                 <Label>Goal: </Label>
                 <InputText
