@@ -91,7 +91,7 @@ deleteSchedule = async (req, res) => {
 
 getScheduleById = async (req, res) => {
     await Schedule
-            .find({id: _req.params.id}, (err, schedule) => {
+            .find({_id: req.params.id}, (err, schedule) => {
                 if(err){
                     return res.status(400).json({success: false, error: err})
                 }
